@@ -1,0 +1,61 @@
+<resources>
+    <!--
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=13:7F:75:31:AB:C5:87:0E:FE:07:24:21:F7:E2:59:74:59:F3:58:79%3Bfelipe.usf
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    13:7F:75:31:AB:C5:87:0E:FE:07:24:21:F7:E2:59:74:59:F3:58:79
+
+    SHA-1 certificate fingerprint:
+    13:7F:75:31:AB:C5:87:0E:FE:07:24:21:F7:E2:59:74:59:F3:58:79
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">YOUR_KEY_HERE</string>
+</resources>
+    <!DOCTYPE html>
+<html>
+<head>
+    <!-- This stylesheet contains specific styles for displaying
+         the map on this page. Replace it with your own styles as
+         described in the documentation:
+         https://developers.google.com/maps/documentation/javascript/tutorial
+    -->
+    <link rel="stylesheet" href="/maps/documentation/javascript/cgc/demos.css">
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+        var myLatLng = {lat: -25.363, lng: 131.044};
+
+        <!-- Create a map object and specify the DOM element
+         // for display.
+         -->
+         var map = new google.maps.Map(document.getElementById('map'), {
+         center: myLatLng,
+         zoom: 4
+         });
+
+        <!--  Create a marker and set its position.
+         -->
+        var marker = new google.maps.Marker({
+        map: map,
+        position: myLatLng,
+        title: 'Hello World!'
+        });
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+        async defer></script>
+</body>
+</html>
